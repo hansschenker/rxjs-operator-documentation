@@ -50,6 +50,8 @@ function buildSidebar() {
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  // Project site served under /<repo>/ (GitHub Pages, incl. the netxpert.ch domain).
+  base: '/rxjs-operator-documentation/',
   title: 'RxJS Operator Documentation',
   description:
     'Formal specifications for RxJS operators using an eight-policy framework.',
