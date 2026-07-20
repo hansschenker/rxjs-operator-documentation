@@ -2,6 +2,8 @@
 
 > **Comprehensive, formal specifications for RxJS operators using an eight-policy framework**
 
+📖 **Live site: [netxpert.ch/rxjs-operator-documentation](https://netxpert.ch/rxjs-operator-documentation/)** — 100 operators, searchable, built with VitePress.
+
 A systematic documentation project providing complete, pedagogically-sound operator specifications for the RxJS library. Each operator is documented following a rigorous eight-policy framework designed to eliminate ambiguity, prevent common mistakes, and provide developers with complete mental models for reactive programming.
 
 **Project Mentor**: [Claude Sonnet 4.5](https://www.anthropic.com/claude) - AI assistant by Anthropic
