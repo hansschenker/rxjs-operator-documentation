@@ -27,6 +27,7 @@ Operators that selectively emit values from the source observable.
 | [takeWhile](./filtering/takeWhile.md) | Emit values while a predicate holds true |
 | [every](./filtering/every.md) | Emit a boolean: do all values satisfy a predicate? |
 | [isEmpty](./filtering/isEmpty.md) | Emit true if the source completes without emitting any values |
+| [defaultIfEmpty](./filtering/defaultIfEmpty.md) | Emit a fallback value if the source completes without emitting |
 | [ignoreElements](./filtering/ignoreElements.md) | Ignore all next emissions; forward only error/complete |
 | [distinct](./filtering/distinct.md) | Emit values not seen before (global uniqueness) |
 | [distinctUntilChanged](./filtering/distinctUntilChanged.md) | Emit values only when they differ from the previous |
@@ -88,6 +89,7 @@ Operators that combine values from multiple observables.
 | [endWith](./combination/endWith.md) | Append synchronous values after the source completes |
 | [withLatestFrom](./combination/withLatestFrom.md) | Combine source value with the latest value from another observable |
 | [zipAll](./combination/zipAll.md) | Combine inner observables using zip strategy |
+| [zipWith](./combination/zipWith.md) | Pair the source with other observables by emission index |
 | [onErrorResumeNextWith](./combination/onErrorResumeNextWith.md) | Continue with next observable on error or completion |
 | [combineLatest](./combination/combineLatest-operator-documentation.md) | Combine latest values from multiple observables *(pre-existing)* |
 
@@ -163,13 +165,13 @@ Operators that collect values into arrays (buffers) or nested observables (windo
 
 | Category | Count |
 |----------|-------|
-| Filtering | 21 |
-| Transformation | 16 |
+| Filtering | 22 |
+| Transformation | 20 |
 | Higher-Order Mapping | 8 |
-| Combination | 13 |
+| Combination | 14 |
 | Error Handling | 6 |
 | Utility | 9 |
 | Rate Limiting | 8 |
 | Multicasting | 3 |
 | Buffering & Windowing | 10 |
-| **Total** | **94** |
+| **Total** | **100** |

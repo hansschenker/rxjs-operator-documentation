@@ -23,9 +23,9 @@
 
 ## Functional Specification
 
-**Input**: Observable<T> emitting values v₁, v₂, v₃, ...
+**Input**: `Observable<T>` emitting values v₁, v₂, v₃, ...
 
-**Output**: Observable<R> emitting values from inner Observables in source emission order
+**Output**: `Observable<R>` emitting values from inner Observables in source emission order
 
 **Transformation**: For each source emission, `concatMap` applies the projection function to create an inner Observable, subscribes to it, and **waits for it to complete** before processing the next source emission. Inner Observables are processed sequentially, one at a time, preserving source order.
 
@@ -883,7 +883,7 @@ from(items).pipe(
 - **`mergeMap`**: Concurrent version - processes all inner Observables simultaneously. Use for independent parallel operations where throughput matters and order doesn't.
 - **`switchMap`**: Cancelling version - cancels previous inner Observable when new one starts. Use for user-driven actions where only latest result matters (search, navigation).
 - **`exhaustMap`**: Ignoring version - ignores new source emissions while inner Observable is active. Use to prevent duplicate operations (form submissions, API calls).
-- **`concatAll`**: Flattens Observable<Observable<T>> sequentially without transformation. Use when you already have nested Observables and need sequential flattening.
+- **`concatAll`**: Flattens `Observable<Observable<T>>` sequentially without transformation. Use when you already have nested Observables and need sequential flattening.
 
 **Complementary Operators**:
 - **`catchError`**: Handle errors from inner Observables → `concatMap(x => doWork(x).pipe(catchError(...)))`

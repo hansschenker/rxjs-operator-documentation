@@ -23,9 +23,9 @@
 
 ## Functional Specification
 
-**Input**: Observable<T> emitting values v₁, v₂, v₃, ...
+**Input**: `Observable<T>` emitting values v₁, v₂, v₃, ...
 
-**Output**: Observable<R> emitting values from inner Observables, but only when no inner Observable is currently active
+**Output**: `Observable<R>` emitting values from inner Observables, but only when no inner Observable is currently active
 
 **Transformation**: For each source emission, `exhaustMap` checks if an inner Observable is currently active. If **yes**, the source emission is **ignored/dropped**. If **no**, it applies the projection function to create and subscribe to a new inner Observable. Only processes source emissions when idle.
 
@@ -928,7 +928,7 @@ fromEvent(button, 'click').pipe(
 - **`mergeMap`**: Concurrent version - all inner Observables run simultaneously. Use for independent parallel operations where all results matter.
 - **`switchMap`**: Cancelling version - cancels previous inner Observable. Use for user-driven actions where only latest result matters (search, navigation).
 - **`concatMap`**: Sequential version - queues and processes one at a time. Use when order matters or operations are dependent.
-- **`exhaustAll`**: Flattens Observable<Observable<T>> using exhaust strategy. Use when you already have nested Observables.
+- **`exhaustAll`**: Flattens `Observable<Observable<T>>` using exhaust strategy. Use when you already have nested Observables.
 
 **Complementary Operators**:
 - **`tap`**: Debug and provide feedback → `exhaustMap(x => doWork(x).pipe(tap(...)))`

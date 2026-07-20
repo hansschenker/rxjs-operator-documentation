@@ -28,9 +28,9 @@
 
 ## Functional Specification
 
-**Input**: Observable<T> emitting values v₁, v₂, v₃, ...
+**Input**: `Observable<T>` emitting values v₁, v₂, v₃, ...
 
-**Output**: Observable<R> emitting flattened values from all inner Observables
+**Output**: `Observable<R>` emitting flattened values from all inner Observables
 
 **Transformation**: For each source emission, `mergeMap` applies the projection function to create an inner Observable, subscribes to it immediately, and merges all emissions from all active inner Observables into the output stream. Multiple inner Observables can emit concurrently.
 
@@ -671,7 +671,7 @@ source$.pipe(
 - **`concatMap`**: Sequential version of mergeMap - waits for each inner Observable to complete before starting the next. Use when order matters or you need sequential processing.
 - **`switchMap`**: Cancels previous inner Observable when source emits. Use when only the latest result matters (like search, navigation).
 - **`exhaustMap`**: Ignores new source emissions while an inner Observable is active. Use for preventing duplicate operations (like preventing double-clicks).
-- **`mergeAll`**: Flattens Observable<Observable<T>> to Observable<T> without transformation. Use when you already have nested Observables.
+- **`mergeAll`**: Flattens `Observable<Observable<T>>` to `Observable<T>` without transformation. Use when you already have nested Observables.
 
 **Complementary Operators**:
 - **`catchError`**: Handle errors from inner Observables → `mergeMap(x => doWork(x).pipe(catchError(...)))`
@@ -752,7 +752,7 @@ After students understand basic operators (map, filter) and have grasped the con
 **Teaching Progression**:
 1. Start with `map` (synchronous transformation)
 2. Introduce the problem: "What if the transformation returns an Observable?"
-3. Show Observable<Observable<T>> nesting problem
+3. Show `Observable<Observable<T>>` nesting problem
 4. Introduce `mergeMap` as the solution (flattening)
 4. Demonstrate concurrency with marble diagrams
 5. Compare with `concatMap` (sequential) and `switchMap` (cancelling)

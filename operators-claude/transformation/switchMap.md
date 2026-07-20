@@ -23,9 +23,9 @@
 
 ## Functional Specification
 
-**Input**: Observable<T> emitting values v₁, v₂, v₃, ...
+**Input**: `Observable<T>` emitting values v₁, v₂, v₃, ...
 
-**Output**: Observable<R> emitting values from the most recent inner Observable only
+**Output**: `Observable<R>` emitting values from the most recent inner Observable only
 
 **Transformation**: For each source emission, `switchMap` applies the projection function to create an inner Observable, **cancels any previous inner Observable**, subscribes to the new one, and emits its values. Only the most recent inner Observable is active at any time.
 
@@ -783,7 +783,7 @@ fromEvent(window, 'scroll').pipe(
 - **`mergeMap`**: Concurrent version - does NOT cancel previous inner Observables. Use when you need all results (parallel processing of collections).
 - **`concatMap`**: Sequential version - queues source emissions, processes one at a time. Use when order matters (sequential workflows, dependent operations).
 - **`exhaustMap`**: Ignoring version - ignores new source emissions while inner Observable is active. Use to prevent duplicate operations (form submissions, save buttons).
-- **`switchAll`**: Flattens Observable<Observable<T>> without transformation. Use when you already have nested Observables.
+- **`switchAll`**: Flattens `Observable<Observable<T>>` without transformation. Use when you already have nested Observables.
 
 **Complementary Operators**:
 - **`debounceTime`**: Delay source emissions → `source$.pipe(debounceTime(300), switchMap(...))` for search
